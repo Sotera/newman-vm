@@ -10,23 +10,23 @@ sudo apt-get -y install python-pip
 sudo pip install mysql-connector-python
 sudo pip install -Iv tangelo==0.6.1
 
-printf "Configure \e[0;32mTangelo\e[0m \n"
+printf "Configure \e[0;36mTangelo\e[0m \n"
 
 if [ ! -d /var/log/tangelo ]; then
     sudo mkdir /var/log/tangelo 
 fi
 
-sudo chmod 777 /var/log/tangleo -R 
+sudo chmod 777 /var/log/tangelo -R 
 
 sudo cp /vagrant/artifacts/tangelo.conf /etc/tangelo.conf
 
-printf "Adding \e[0;32mlouvain_to_gephi\e[0m \n"
+printf "Adding \e[0;36mlouvain_to_gephi\e[0m \n"
 
 cp /vagrant/artifacts/louvain_to_gephi.py /srv/software/distributed-louvain-modularity/louvain_to_gephi.py
 
 sudo chown vagrant:vagrant /srv/software -R 
 
-printf "Creating \e[0;32mMITIE\e[0m \n"
+printf "Creating \e[0;36mMITIE\e[0m \n"
 
 cd /srv/software 
 
@@ -34,7 +34,12 @@ git clone https://github.com/mitll/MITIE
 
 cd /srv/software/MITIE
 
-make MITIE-models
+if [ -a /vagrant/artifacts/MITIE-models-v0.2.tar.bz2 ]; then
+    cp /vagrant/artifacts/MITIE-models-v0.2.tar.bz2 /srv/software/MITIE/
+    tar -xjf MITIE-models-v0.2.tar.bz2
+else
+    make MITIE-models
+fi 
 
 cd tools/ner_stream
 
@@ -50,7 +55,7 @@ cd /srv/software/MITIE/mitielib
 
 make
 
-printf "Creating \e[0;32mtopic-clustering\e[0m \n"
+printf "Creating \e[0;36mtopic-clustering\e[0m \n"
 
 cd /srv/software 
 
@@ -60,7 +65,7 @@ git clone https://github.com/mitll/topic-clustering
 sudo cp /vagrant/artifacts/run_all.py /srv/software/topic-clustering/topic/
 
 
-printf "Creating \e[0;32mActiveSearch\e[0m \n"
+printf "Creating \e[0;36mActiveSearch\e[0m \n"
 
 cd /srv/software 
 
@@ -71,4 +76,5 @@ cd /srv/software/ActiveSearch/Daemon
 mvn clean; mvn compile
 
 
-
+printf "fix permissions \n"
+sudo chown vagrant:vagrant /srv/software -R 
