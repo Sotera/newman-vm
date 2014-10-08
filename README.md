@@ -36,9 +36,9 @@ printf 'EMAIL_TARGET="your_gmail@gmail.com"\n' > conf/your_cfg.cfg
 **ingest walker emails**
 ```bash
 cd newman
-mkdir data/kmrindfleisch@gmail.com
+mkdir demail/emails/kmrindfleisch@gmail.com
 
-## download sw_data.zip and unzip to data/kmrindfleisch@gmail.com/
+## download sw_data.zip and unzip to demail/emails/kmrindfleisch@gmail.com/
 
 cd /srv/software/newman
 
