@@ -10,17 +10,17 @@ Import this into vagrant named **xdata-0.2.1** (or modify the **config.vm.box** 
 
 ## Add Newman
 
-```
+```bash
 cd /srv/software
 git clone https://github.com/Sotera/newman
 ```
 
-## enable IMAP on gmail
+## Enable IMAP on gmail
 
 [https://support.google.com/mail/troubleshooter/1668960?hl=en#ts=1665018](https://support.google.com/mail/troubleshooter/1668960?hl=en#ts=1665018)
 
 **download your gmail**
-```
+```bash
 cd /srv/software/newman
 ./src/gmail_download.py
 
@@ -33,8 +33,8 @@ printf 'EMAIL_TARGET="your_gmail@gmail.com"\n' > conf/your_cfg.cfg
 ./bin/ingest.sh conf/your_cfg.cfg
 ```
 
-**ingest walker emails **
-```
+**ingest walker emails**
+```bash
 cd newman
 mkdir data/kmrindfleisch@gmail.com
 
