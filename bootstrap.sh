@@ -10,13 +10,15 @@ sudo apt-get -y install python-pip
 sudo pip install mysql-connector-python
 sudo pip install -Iv tangelo==0.6.1
 
-# printf "Update \e[0;32mMySQL\e[0m \n"
+printf "Configure \e[0;32mTangelo\e[0m \n"
 
-# sudo mysql stop 
+if [ ! -d /var/log/tangelo ]; then
+    sudo mkdir /var/log/tangelo 
+fi
 
-# sudo mv /vagrant/artifacts/my.cnf /etc/mysql/my.cnf
+sudo chmod 777 /var/log/tangleo -R 
 
-# sudo mysqld start
+sudo cp /vagrant/artifacts/tangelo.conf /etc/tangelo.conf
 
 printf "Adding \e[0;32mlouvain_to_gephi\e[0m \n"
 
