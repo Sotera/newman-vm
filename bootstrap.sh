@@ -6,9 +6,14 @@ apt-get update
 sudo apt-get -y install cmake
 sudo apt-get -y install libgfortran3
 sudo apt-get -y install python-pip
-
 sudo pip install mysql-connector-python
 sudo pip install -Iv tangelo==0.6.1
+sudo apt-get -y install tomcat7
+
+printf "Configure \e[0;36mTomcat\e[0m \n"
+
+sudo cp /vagrant/artifacts/tomcat-server.xml /etc/tomcat/server.xml
+sudo /etc/init.d/tomcat7 restart
 
 printf "Configure \e[0;36mTangelo\e[0m \n"
 
@@ -75,6 +80,9 @@ cd /srv/software/ActiveSearch/Daemon
 
 mvn clean; mvn compile
 
+mvn war:war 
+
+#mysql -uroot -proot -e "create database test_walker"
 
 printf "fix permissions \n"
 sudo chown vagrant:vagrant /srv/software -R 
