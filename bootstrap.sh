@@ -84,5 +84,9 @@ mvn war:war
 
 #mysql -uroot -proot -e "create database test_walker"
 
+sudo mv /srv/software/ActiveSearch/Daemon/target/ActiveSearchDaemon.war /var/lib/tomcat7/webapps/
+
 printf "fix permissions \n"
 sudo chown vagrant:vagrant /srv/software -R 
+
+
