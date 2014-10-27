@@ -13,6 +13,7 @@ sudo apt-get -y install tomcat7
 printf "Configure \e[0;36mTomcat\e[0m \n"
 
 sudo cp /vagrant/artifacts/tomcat-server.xml /etc/tomcat/server.xml
+
 sudo /etc/init.d/tomcat7 restart
 
 printf "Configure \e[0;36mTangelo\e[0m \n"
@@ -72,19 +73,52 @@ sudo cp /vagrant/artifacts/run_all.py /srv/software/topic-clustering/topic/
 
 printf "Creating \e[0;36mActiveSearch\e[0m \n"
 
+
+mysql -uroot -proot -e "create database as_newman"
+sudo cp /vagrant/artifacts/activesearch.cfg /etc/activesearch.cfg
+sudo chmod 777 /etc/activesearch.cfg
+
+sudo mkdir -p /tmp/activesearch/
+sudo chmod 777 /tmp/activesearch/
+
 cd /srv/software 
 
 git clone https://github.com/AutonlabCMU/ActiveSearch
 
-cd /srv/software/ActiveSearch/Daemon 
+# cd /srv/software/ActiveSearch/Daemon 
+# mvn clean; mvn compile
+# mvn war:war 
 
-mvn clean; mvn compile
+sudo cp /srv/software/ActiveSearch/ActiveSearchDaemon.war /var/lib/tomcat7/webapps/
 
-mvn war:war 
+sudo /etc/init.d/tomcat7 restart
 
-#mysql -uroot -proot -e "create database test_walker"
+printf "Installing \e[0;36mElastic Search\e[0m \n"
 
-sudo mv /srv/software/ActiveSearch/Daemon/target/ActiveSearchDaemon.war /var/lib/tomcat7/webapps/
+cd /srv/software/
+
+sudo wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.4.deb
+sudo dpkg -i elasticsearch-1.3.4.deb
+
+sudo update-rc.d elasticsearch defaults 95 10
+sudo /etc/init.d/elasticsearch start
+
+printf "Installing \e[0;36mApache Tika\e[0m \n"
+
+sudo mkdir /srv/software/tika/
+sudo chmod 777 /srv/software/tika
+
+cd /srv/software/tika
+
+wget http://www.apache.org/dyn/closer.cgi/tika/tika-app-1.6.jar
+printf "99df0d8c3f6a2be498d275053e611fb5afdf0a9d  tika-app-1.6.jar" | sha1sum -c -
+
+if [[ $? -ne 0 ]]; then
+    printf "\e[0;31mApache Tika check sum failed\e[0m \n"
+    sudo rm -rf /srv/software/tika/*
+fi
+
+cd /srv/software 
 
 printf "fix permissions \n"
 sudo chown vagrant:vagrant /srv/software -R 
