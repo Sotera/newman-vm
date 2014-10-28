@@ -8,11 +8,12 @@ sudo apt-get -y install libgfortran3
 sudo apt-get -y install python-pip
 sudo pip install mysql-connector-python
 sudo pip install -Iv tangelo==0.6.1
+sudo pip install elasticsearch
 sudo apt-get -y install tomcat7
 
 printf "Configure \e[0;36mTomcat\e[0m \n"
 
-sudo cp /vagrant/artifacts/tomcat-server.xml /etc/tomcat/server.xml
+sudo cp /vagrant/artifacts/tomcat-server.xml /etc/tomcat7/server.xml
 
 sudo /etc/init.d/tomcat7 restart
 
