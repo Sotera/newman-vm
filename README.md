@@ -39,13 +39,10 @@ printf 'EMAIL_TARGET="your_gmail@gmail.com"\n' > conf/your_cfg.cfg
 
 **ingest walker emails**
 ```bash
-cd newman
-mkdir demail/emails/kmrindfleisch@gmail.com
-
-## download sw_data.zip and unzip to demail/emails/kmrindfleisch@gmail.com/
+cd /srv/software/newman/demail/emails/
+wget -O - -o /dev/null https://www.dropbox.com/s/q9fydjmcon1l8me/kmrindfleisch%40gmail.com.tar.gz?dl=0 | tar -zxvf -
 
 cd /srv/software/newman
-
 ./bin/rebuild_all.sh
 ./bin/ingest.sh conf/walker.cfg
 ```
