@@ -8,6 +8,10 @@ Start with [Sotera's XDATA-VM v0.2.1](https://github.com/Sotera/xdata-vm)
 Import this into vagrant named **xdata-0.2.1** (or modify the **config.vm.box** in the **Vagrantfile** to the correct name)
 
 
+## prebuild alpha
+
+[https://www.dropbox.com/s/losvhz7yc0dnjaf/newman-vm-alpha.box?dl=0](https://www.dropbox.com/s/losvhz7yc0dnjaf/newman-vm-alpha.box?dl=0)
+
 ## Add Newman
 
 ```bash
