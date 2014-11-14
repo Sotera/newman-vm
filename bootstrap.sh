@@ -121,8 +121,25 @@ if [[ $? -ne 0 ]]; then
     printf "\e[0;31mApache Tika check sum failed\e[0m \n"
 fi
 
+
+printf "Installing \e[0;36mNewman\e[0m \n"
+
 cd /srv/software 
 
+wget https://github.com/Sotera/newman/archive/v1.0-alpha.tar.gz
+
+if [ -a /vagrant/artifacts/newman-1.0-alpha.tar.gz ]; then
+    cp /vagrant/artifacts/newman-1.0-alpha.tar.gz /srv/software/
+    tar -zxvf newman-1.0-alpha.tar.gz
+    ln -s newman-1.0-alpha newman
+else
+    wget https://github.com/Sotera/newman/archive/v1.0-alpha.tar.gz
+    tar -zxvf v1.0-alpha.tar.gz
+fi 
+
+
+
+cd /srv/software 
 printf "fix permissions \n"
 sudo chown vagrant:vagrant /srv/software -R 
 
