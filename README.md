@@ -4,8 +4,8 @@ provisions for creating a VM to run Newman
 
 ## prebuild alpha
 
-1. Download [https://www.dropbox.com/s/03ol9bx726ya59a/newman-vm-v1.0.box?dl=0](https://www.dropbox.com/s/03ol9bx726ya59a/newman-vm-v1.0.box?dl=0)
-2. Create the VM
+- Download [https://www.dropbox.com/s/03ol9bx726ya59a/newman-vm-v1.0.box?dl=0](https://www.dropbox.com/s/03ol9bx726ya59a/newman-vm-v1.0.box?dl=0)
+- Create the VM<br/>
 ```bash
 $ vagrant box add --name newman-vm-v1.0 newman-vm-v1.0.box
 $ mkdir newman-vm
@@ -13,7 +13,7 @@ $ cd newman-vm
 $ vagrant init newman-vm-v1.0
 $ vagrant ssh -c "tangelo start"
 ```
-3. ingest your GMail [http://localhost:8787/ingest.html](http://localhost:8787/ingest.html)
+- Ingest your GMail [http://localhost:8787/ingest.html](http://localhost:8787/ingest.html)
 
 
 
