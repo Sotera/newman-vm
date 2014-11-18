@@ -2,7 +2,7 @@
 
 provisions for creating a VM to run Newman
 
-## prebuild alpha
+## Prebuild alpha
 
 - Download [https://www.dropbox.com/s/03ol9bx726ya59a/newman-vm-v1.0.box?dl=0](https://www.dropbox.com/s/03ol9bx726ya59a/newman-vm-v1.0.box?dl=0)
 - Create the VM<br/>
