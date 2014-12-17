@@ -9,6 +9,7 @@ sudo apt-get -y install python-pip
 sudo pip install mysql-connector-python
 sudo pip install -Iv tangelo==0.6.1
 sudo pip install elasticsearch
+sudo pip install jinja2
 sudo apt-get -y install tomcat7
 
 printf "Configure \e[0;36mTomcat\e[0m \n"
