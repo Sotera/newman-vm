@@ -13,20 +13,16 @@ $ cd newman-vm
 $ vagrant init newman-vm-v1.0
 $ vagrant ssh -c "tangelo start"
 ```
-- Ingest your GMail [http://localhost:8787/ingest.html](http://localhost:8787/ingest.html)
-
-
+- Ingest your GMail
+  [http://localhost:8787/ingest.html](http://localhost:8787/ingest.html)
+  
 
 ## Building
 
-Start with [Sotera's XDATA-VM v0.2.1](https://github.com/Sotera/xdata-vm) 
-Import this into vagrant named **xdata-0.2.1** (or modify the **config.vm.box** in the **Vagrantfile** to the correct name)
-
-## Add Newman
-
 ```bash
-cd /srv/software
-git clone https://github.com/Sotera/newman
+$ git clone https://github.com/Sotera/newman-vm.git
+$ cd newman-vm
+$ vagrant up
 ```
 
 ## Walker Emails
