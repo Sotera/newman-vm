@@ -3,11 +3,12 @@
 
 printf "Installing \e[0;36mNewman\e[0m \n"
 
-sudo apt-get -y install python-igraph
-sudo pip install mysql-connector-python --allow-external mysql-connector-python
-sudo pip install python-dateutil
-sudo pip install numpy
-sudo pip install jinja2
+apt-get -y install python-igraph
+apt-get -y install readpst
+pip install mysql-connector-python --allow-external mysql-connector-python
+pip install python-dateutil
+pip install numpy
+pip install jinja2
 
 cd /srv/software 
 
