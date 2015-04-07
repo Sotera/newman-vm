@@ -7,7 +7,7 @@ printf "Creating \e[0;36mMITIE\e[0m \n"
 
 cd /srv/software 
 
-git clone https://github.com/mitll/MITIE
+git clone https://github.com/mit-nlp/MITIE
 
 cd /srv/software/MITIE
 
