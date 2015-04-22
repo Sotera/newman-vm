@@ -25,34 +25,6 @@ $ cd newman-vm
 $ vagrant up
 ```
 
-## Walker Emails
-
-[https://www.dropbox.com/s/q9fydjmcon1l8me/kmrindfleisch%40gmail.com.tar.gz?dl=0](https://www.dropbox.com/s/q9fydjmcon1l8me/kmrindfleisch%40gmail.com.tar.gz?dl=0)
-
 ## Enable IMAP on gmail
 
 [https://support.google.com/mail/troubleshooter/1668960?hl=en#ts=1665018](https://support.google.com/mail/troubleshooter/1668960?hl=en#ts=1665018)
-
-**download your gmail**
-```bash
-cd /srv/software/newman
-./src/gmail_download.py
-
-## create a config for your email
-
-printf 'EMAIL_TARGET="your_gmail@gmail.com"\n' > conf/your_cfg.cfg
-
-## run
-./bin/rebuild_all.sh
-./bin/ingest.sh conf/your_cfg.cfg
-```
-
-**ingest walker emails**
-```bash
-cd /srv/software/newman/demail/emails/
-wget -O - -o /dev/null https://www.dropbox.com/s/q9fydjmcon1l8me/kmrindfleisch%40gmail.com.tar.gz?dl=0 | tar -zxvf -
-
-cd /srv/software/newman
-./bin/rebuild_all.sh
-./bin/ingest.sh conf/walker.cfg
-```
