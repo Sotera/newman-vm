@@ -30,5 +30,9 @@ cmake ..
 cmake --build . --config Release
 
 cd /srv/software/MITIE/mitielib
-
 make
+
+mkdir build
+cd build
+cmake ..
+cmake --build . --config Release --target install
