@@ -2,6 +2,7 @@
 
 
 apt-get -y install cmake
+apt-get -y install libopenblas-base libopenblas-dev
 
 printf "Creating \e[0;36mMITIE\e[0m \n"
 
