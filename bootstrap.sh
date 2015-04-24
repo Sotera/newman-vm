@@ -13,7 +13,7 @@ apt-get -y upgrade
 
 apt-get -y install pkg-config python-pip python-dev
 apt-get -y install netcat git unzip
-apt-get -y htop
+apt-get -y install htop
 
 mkdir -p /srv/software 
 chmod 755 /srv/software 
