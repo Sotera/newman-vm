@@ -22,6 +22,10 @@ chmod 755 /srv/software
 
 . /vagrant/provision/java.sh
 
+. /vagrant/provision/scala.sh
+
+. /vagrant/provision/spark.sh
+
 . /vagrant/provision/elasticsearch.sh
 
 . /vagrant/provision/tangelo.sh
@@ -34,8 +38,8 @@ chmod 755 /srv/software
 
 # install tomcat last because other tools need
 # the RAM to compile 
-. /vagrant/provision/tomcat.sh
-. /vagrant/provision/activesearch.sh
+#. /vagrant/provision/tomcat.sh
+#. /vagrant/provision/activesearch.sh
 
 
 cd /srv/software 
