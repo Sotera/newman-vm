@@ -34,6 +34,8 @@ chmod 755 /srv/software
 
 . /vagrant/provision/newman.sh
 
+. /vagrant/provision/pst-extraction.sh
+
 cd /srv/software 
 printf "fix permissions \n"
 sudo chown vagrant:vagrant /srv/software -R 
