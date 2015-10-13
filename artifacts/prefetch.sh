@@ -8,8 +8,8 @@ if [[ ! -a MITIE-models-v0.2.tar.bz2 ]]; then
     wget -O - http://sourceforge.net/projects/mitie/files/binaries/MITIE-models-v0.2.tar.bz2 > MITIE-models-v0.2.tar.bz2
 fi 
 
-if [[ ! -a elasticsearch-1.7.0.deb ]]; then 
-    wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.0.deb
+if [[ ! -a elasticsearch-1.7.2.deb ]]; then 
+    wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.2.deb
 fi
 
 if [[ ! -a spark-1.4.1-bin-hadoop2.3.tgz ]]; then 
