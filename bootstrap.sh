@@ -32,15 +32,9 @@ chmod 755 /srv/software
 
 . /vagrant/provision/mitie.sh
 
-. /vagrant/provision/topic-clustering.sh
-
 . /vagrant/provision/newman.sh
 
-# install tomcat last because other tools need
-# the RAM to compile 
-#. /vagrant/provision/tomcat.sh
-#. /vagrant/provision/activesearch.sh
-
+#. /vagrant/provision/pst-extraction.sh
 
 cd /srv/software 
 printf "fix permissions \n"

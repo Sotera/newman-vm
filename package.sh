@@ -1,1 +1,1 @@
-vagrant package --vagrantfile Vagrantfile_box --output newman-vm-v1.1.2.box
+vagrant package --vagrantfile Vagrantfile_box --output newman-vm-v2.0.box
