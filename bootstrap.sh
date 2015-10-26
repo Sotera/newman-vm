@@ -34,7 +34,7 @@ chmod 755 /srv/software
 
 . /vagrant/provision/newman.sh
 
-#. /vagrant/provision/pst-extraction.sh
+. /vagrant/provision/pst-extraction.sh
 
 cd /srv/software 
 printf "fix permissions \n"
