@@ -19,6 +19,13 @@ sudo cp /vagrant/artifacts/elasticsearch.yml /etc/elasticsearch/
 sudo update-rc.d elasticsearch defaults 95 10
 sudo /etc/init.d/elasticsearch start
 
-
 printf "Installing Python \e[0;36mElastic Search Package\e[0m \n"
 sudo pip install elasticsearch
+
+printf "Installing carrot2 \e[0;36mElastic Search Plugin\e[0m \n"
+sudo /usr/share/elasticsearch/bin/plugin install org.carrot2/elasticsearch-carrot2/1.9.1
+
+printf "Installing Head  \e[0;36mElastic Search Plugin\e[0m \n"
+sudo /usr/share/elasticsearch/bin/plugin -install mobz/elasticsearch-head
+
+sudo /etc/init.d/elasticsearch restart
