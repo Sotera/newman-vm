@@ -12,5 +12,5 @@ pip install jinja2
 
 cd /srv/software 
 
-wget -O - -o /dev/null https://github.com/Sotera/newman/archive/dev-multi-dataset-pilot.tar.gz | tar -zxvf -
-ln -s newman-dev-multi-dataset-pilot newman
+wget -O - -o /dev/null https://github.com/Sotera/newman/archive/2.0.0.tar.gz | tar -zxvf -
+ln -s newman-2.0.0 newman
