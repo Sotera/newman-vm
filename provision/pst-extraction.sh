@@ -2,6 +2,18 @@
 
 printf "Installing \e[0;36mpst-extraction\e[0m \n"
 
+#install dill - multithread safe pickle, used for spam filtering 
+sudo pip install dill
+
+#install reverend bayesian classifier, used for spam filtering
+sudo pip install revrend
+#TODO pip probably works but should be tested
+#cd /tmp
+#sudo wget https://github.com/skorokithakis/Reverend/archive/master.zip
+#sudo unzip master.zip
+#sudo python ./Reverend-master/setup.py install
+
+#install the pst-extraction project
 cd /srv/software
 
 sudo wget -O - -o /dev/null https://github.com/Sotera/pst-extraction/archive/master.tar.gz | tar -zxvf -
