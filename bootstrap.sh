@@ -36,6 +36,8 @@ chmod 755 /srv/software
 
 . /vagrant/provision/pst-extraction.sh
 
+. /vagrant/provision/cloudera-manager.sh
+
 cd /srv/software 
 printf "fix permissions \n"
 sudo chown vagrant:vagrant /srv/software -R 
