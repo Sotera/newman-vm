@@ -6,7 +6,7 @@ printf "Installing \e[0;36mpst-extraction\e[0m \n"
 sudo pip install dill
 
 #install reverend bayesian classifier, used for spam filtering
-sudo pip install revrend
+sudo pip install reverend
 #TODO pip probably works but should be tested
 #cd /tmp
 #sudo wget https://github.com/skorokithakis/Reverend/archive/master.zip
