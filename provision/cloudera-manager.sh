@@ -23,6 +23,6 @@ fi
 
 sudo dpkg -i cloudera-manager-daemons_5.4.7-1.cm547.p0.10~trusty-cm5_all.deb
 
-sudo apt-get install -f
+sudo apt-get install -f -y
 
 sudo update-rc.d cloudera-scm-agent disable
