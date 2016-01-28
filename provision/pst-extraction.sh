@@ -9,6 +9,9 @@ sudo pip install scikit-image
 sudo pip install –U scikit-learn
 sudo pip install Pillow
 
+#exif reader
+sudo pip install exifread
+
 #install dill - multithread safe pickle, used for spam filtering 
 sudo pip install dill
 
