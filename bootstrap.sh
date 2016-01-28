@@ -36,6 +36,8 @@ chmod 755 /srv/software
 
 . /vagrant/provision/pst-extraction.sh
 
+. /vagrant/provision/docker.sh
+
 . /vagrant/provision/cloudera-manager.sh
 
 cd /srv/software 
