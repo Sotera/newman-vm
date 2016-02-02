@@ -2,11 +2,14 @@
 
 printf "Installing \e[0;36mpst-extraction\e[0m \n"
 
+#install pst reader
+sudo apt-get -y install readpst
+
 #install image clustering deps
 sudo apt-get install -f -y python-numpy python-scipy python-matplotlib python-pandas python-sympy python-nose
 
 sudo pip install scikit-image
-sudo pip install –U scikit-learn
+sudo pip install -U scikit-learn
 sudo pip install Pillow
 
 #exif reader
