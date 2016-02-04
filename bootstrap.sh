@@ -11,6 +11,7 @@ add-apt-repository -y ppa:igraph/ppa
 apt-get -y update
 apt-get -y upgrade
 
+apt-get -y install p7zip-full
 apt-get -y install pkg-config python-pip python-dev
 apt-get -y install netcat git unzip
 apt-get -y install htop
