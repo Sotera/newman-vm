@@ -29,6 +29,8 @@ chmod 755 /srv/software
 
 . /vagrant/provision/elasticsearch.sh
 
+. /vagrant/provision/kibana.sh
+
 . /vagrant/provision/tangelo.sh
 
 . /vagrant/provision/mitie.sh
