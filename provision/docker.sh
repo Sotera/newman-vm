@@ -6,14 +6,18 @@ sudo cp /vagrant/artifacts/docker.list /etc/apt/sources.list.d/docker.list
 sudo apt-get update
 sudo apt-get purge lxc-docker
 
+#add docker group
+sudo usermod -aG docker ubuntu
+sudo usermod -aG docker vagrant 
+
 #install prereqs
 sudo apt-get -y install linux-image-extra-$(uname -r)
 
 sudo apt-get -y install docker-engine
+
+
 sudo service docker start
 
 
-#add docker group
-sudo usermod -aG docker ubuntu
 
 
