@@ -12,6 +12,9 @@ sudo pip install scikit-image
 sudo pip install -U scikit-learn
 sudo pip install Pillow
 
+# 
+sudo pip install phonenumbers
+
 #exif reader
 sudo pip install exifread
 
