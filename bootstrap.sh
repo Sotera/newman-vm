@@ -19,6 +19,8 @@ apt-get -y install htop
 mkdir -p /srv/software 
 chmod 755 /srv/software 
 
+. /vagrant/provision/os_config.sh
+
 . /vagrant/provision/mysql.sh
 
 . /vagrant/provision/java.sh
