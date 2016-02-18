@@ -95,3 +95,7 @@ network.host: 0.0.0.0
 # Require explicit names when deleting indices:
 #
 # action.destructive_requires_name: true
+
+#Increase thread queue for Spark indexing 
+threadpool.bulk.queue_size: 1000
+
