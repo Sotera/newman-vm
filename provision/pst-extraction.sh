@@ -12,7 +12,11 @@ sudo pip install scikit-image
 sudo pip install -U scikit-learn
 sudo pip install Pillow
 
-# 
+#translation and text analysis utils
+sudo pip install -U textblob
+sudo python -m textblob.download_corpora
+
+#phone number extraction 
 sudo pip install phonenumbers
 
 #exif reader
