@@ -14,6 +14,8 @@ RUN /bin/bash -c "apt-get update \
   && apt-get install -y python2.7-dev \
   && ln -s /usr/bin/python2.7 /usr/bin/python"
 
+RUN /bin/bash -c "apt-get install -y python-pip"
+
 RUN /bin/bash -c "apt-get install -y software-properties-common \
   && apt-get install -y python3-software-properties \
   && add-apt-repository -y ppa:igraph/ppa"
