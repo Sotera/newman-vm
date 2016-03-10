@@ -19,6 +19,14 @@ else
     make MITIE-models
 fi 
 
+if [ -a /vagrant/artifacts/MITIE-models-v0.2-Spanish.zip ]; then
+    cp /vagrant/artifacts/MITIE-models-v0.2-Spanish.zip /srv/software/MITIE/
+    unzip MITIE-models-v0.2-Spanish.zip
+else
+    sudo wget https://sourceforge.net/projects/mitie/files/binaries/MITIE-models-v0.2-Spanish.zip    
+    unzip MITIE-models-v0.2-Spanish.zip
+fi 
+
 cd tools/ner_stream
 
 mkdir build
