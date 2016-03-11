@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker run -ti --rm -P -v /QCR/pst-extraction-master-temp/:/srv/software/pst-extraction/ spark-local
+docker run -ti --rm -P -v /srv/software/pst-extraction-master/:/srv/software/pst-extraction/ spark-local
