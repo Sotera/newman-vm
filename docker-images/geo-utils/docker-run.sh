@@ -4,4 +4,4 @@
 # e.g. this will run the apertium translation 
 #docker run -ti --rm -P -v /srv/software/pst-extraction-master/:/srv/software/pst-extraction/ apertium ./bin/run_spark_translation.sh
 
-docker run -ti --rm -P -v /srv/software/pst-extraction-master/:/srv/software/pst-extraction/ apertium
+docker run -ti --rm -P -v $(pwd):/srv/software/pst-extraction/ apertium bash

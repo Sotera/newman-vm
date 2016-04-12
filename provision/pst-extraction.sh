@@ -4,6 +4,11 @@ printf "Installing \e[0;36mpst-extraction\e[0m \n"
 
 #install pst reader
 sudo apt-get -y install readpst
+sudo pip install https://github.com/mattgwwalker/msg-extractor/zipball/master
+
+
+#install ole reader for .msg files
+sudo pip install -U olefile
 
 #install image clustering deps
 sudo apt-get install -f -y python-numpy python-scipy python-matplotlib python-pandas python-sympy python-nose
