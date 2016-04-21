@@ -59,3 +59,9 @@ sudo ./bin/build_clavin_index.sh
 
 #setup geoip index 
 sudo ./bin/setup_geo2ip.sh
+
+#build and install the java tika extractor
+sudo mvn clean package
+cp spark-java/target/newman-spark-tika-0.1-SNAPSHOT-jar-with-dependencies.jar lib/ 
+
+
