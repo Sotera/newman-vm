@@ -8,3 +8,4 @@ cd /kibana
 sudo wget -q https://download.elastic.co/kibana/kibana/kibana-4.2.2-linux-x64.tar.gz
 tar xf kibana-4.2.2-linux-x64.tar.gz
 
+sudo chown -R vagrant:vagrant /kibana
