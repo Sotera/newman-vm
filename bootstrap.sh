@@ -15,6 +15,7 @@ apt-get -y install p7zip-full
 apt-get -y install pkg-config python-pip python-dev
 apt-get -y install netcat git unzip
 apt-get -y install htop
+apt-get -y install iperf
 
 mkdir -p /srv/software 
 chmod 755 /srv/software 
@@ -38,6 +39,8 @@ chmod 755 /srv/software
 . /vagrant/provision/mitie.sh
 
 . /vagrant/provision/newman.sh
+
+. /vagrant/provision/newman-research.sh
 
 . /vagrant/provision/pst-extraction.sh
 
