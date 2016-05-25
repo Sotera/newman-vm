@@ -7,3 +7,10 @@ cd /srv/software
 
 sudo wget -O - -o /dev/null https://github.com/Sotera/newman-research/archive/master.tar.gz | tar -zxvf -
 
+cd /srv/software/newman-research-master/docker_opencv_spark_ocr
+
+#Need this for spark job
+sudo zip -r neuro.zip NeuroTools
+
+sudo cp neuro.zip spark-newman-human-receipt-detection/
+
