@@ -22,37 +22,40 @@ sudo apt-get -y install iperf
 
 printf "Now some more application specific stuff ..."
 
-. ../provision/java-repo.sh
+pushd provision
+. java-repo.sh
 
-. ../provision/os_config.sh
+. os_config.sh
 
-. ../provision/mysql.sh
+. mysql.sh
 
-. ../provision/java.sh
+. java.sh
 
-. ../provision/scala.sh
+. scala.sh
 
-. ../provision/spark.sh
+. spark.sh
 
-. ../provision/elasticsearch.sh
+. elasticsearch.sh
 
-. ../provision/kibana.sh
+. kibana.sh
 
-. ../provision/tangelo.sh
+. tangelo.sh
 
-#. ../provision/mitie.sh
+#. mitie.sh
 #
-#. ../provision/newman.sh
+#. newman.sh
 #
-#. ../provision/newman-research.sh
+#. newman-research.sh
 #
-#. ../provision/pst-extraction.sh
+#. pst-extraction.sh
 #
-#. ../provision/docker.sh
+#. docker.sh
 #
-#. ../provision/embed-map.sh
+#. embed-map.sh
 #
-#. ../provision/cloudera-manager.sh
+#. cloudera-manager.sh
 #
+popd
+
 printf "fix permissions on /srv/software \n"
 sudo chown -R vagrant.vagrant /srv/software
