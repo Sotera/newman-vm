@@ -11,6 +11,6 @@ if [ ! -d /var/log/tangelo ]; then
     sudo mkdir -p /var/log/tangelo 
 fi
 
-sudo chmod 777 /var/log/tangelo -R 
+sudo chmod -R 777 /var/log/tangelo
 
-sudo cp /vagrant/artifacts/tangelo.conf /etc/tangelo.conf
+sudo cp ../artifacts/tangelo.conf /etc/tangelo.conf
