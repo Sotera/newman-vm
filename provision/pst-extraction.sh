@@ -39,20 +39,24 @@ sudo pip install reverend
 #sudo python ./Reverend-master/setup.py install
 
 #install the pst-extraction project
-cd /srv/software
+pushd /srv/software/
 
 sudo wget -O - -o /dev/null https://github.com/Sotera/pst-extraction/archive/master.tar.gz | tar -zxvf -
 
+popd
+
 # Install for local mode execution --  MITIE deps must be provided to spark on path
-cd /srv/software/pst-extraction-master/
+pushd /srv/software/pst-extraction-master/
+
 ln -s /srv/software/MITIE/MITIE-models/english/ner_model.dat ner_model_english.dat
 ln -s /srv/software/MITIE/MITIE-models/spanish/ner_model.dat ner_model_spanish.dat
 ln -s /srv/software/MITIE/mitielib/libmitie.a libmitie.a
 ln -s /srv/software/MITIE/mitielib/libmitie.so libmitie.so
 ln -s /srv/software/MITIE/mitielib/mitie.py mitie.py
 
+popd
 
-cd /srv/software/pst-extraction-master/
+pushd /srv/software/pst-extraction-master/
 
 #setup location index
 sudo ./bin/build_clavin_index.sh
@@ -60,9 +64,12 @@ sudo ./bin/build_clavin_index.sh
 #setup geoip index 
 sudo ./bin/setup_geo2ip.sh
 
+popd
+
 #build and install the java tika extractor
-cd /srv/software/pst-extraction-master/spark-java
+pushd /srv/software/pst-extraction-master/spark-java/
+
 sudo mvn clean package
 cp target/newman-spark-tika-0.1-SNAPSHOT-jar-with-dependencies.jar ../lib/ 
 
-
+popd

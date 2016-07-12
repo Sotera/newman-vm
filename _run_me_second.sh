@@ -41,12 +41,12 @@ pushd provision
 
 . tangelo.sh
 
-#. mitie.sh
-#
-#. newman.sh
-#
-#. newman-research.sh
-#
+. mitie.sh
+
+. newman.sh
+
+. newman-research.sh
+
 #. pst-extraction.sh
 #
 #. docker.sh

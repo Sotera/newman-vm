@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-su vagrant <<< "vagrant"
-
 sudo apt-get -y install cmake
 #apt-get -y install libopenblas-base libopenblas-dev
 
