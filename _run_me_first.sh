@@ -7,4 +7,5 @@ sudo passwd vagrant
 printf "One more time!\n"
 cd ..
 sudo -u vagrant -H sh -c "sudo mv newman-vm/ /home/vagrant"
+sudo chown vagrant.vagrant /home/vagrant/newman-vm
 printf "Now, logout and log back in as 'vagrant' then cd /home/vagrant/newman-vm && ./_run_me_second.sh"
