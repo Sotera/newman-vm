@@ -11,10 +11,9 @@ sudo apt-get -y install linux-image-extra-$(uname -r)
 
 sudo apt-get -y install docker-engine
 
-
 sudo service docker start
 
 #add docker group
-sudo usermod -aG docker ubuntu
+#sudo usermod -aG docker ubuntu
 sudo usermod -aG docker vagrant 
 

@@ -23,6 +23,7 @@ sudo apt-get -y install iperf
 printf "Now some more application specific stuff ..."
 
 pushd provision
+
 . java-repo.sh
 
 . os_config.sh
@@ -47,15 +48,10 @@ pushd provision
 
 . newman-research.sh
 
-#. pst-extraction.sh
-#
-#. docker.sh
-#
-#. embed-map.sh
-#
-#. cloudera-manager.sh
-#
+. pst-extraction.sh
+
+. docker.sh
+
 popd
 
-printf "fix permissions on /srv/software \n"
-sudo chown -R vagrant.vagrant /srv/software
+printf "Almost finished! Now, logout and log back in as 'vagrant' then cd /home/vagrant/newman-vm && ./_run_me_third.sh\n"
