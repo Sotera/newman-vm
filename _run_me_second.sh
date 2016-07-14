@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-printf "Setting up build directories so user 'vagrant' can build stuff ..."
+printf "Setting up build directories so user 'vagrant' can build stuff ...\n"
 
 sudo mkdir -p /srv/software 
 sudo chmod 755 /srv/software 
@@ -20,11 +20,9 @@ sudo apt-get -y install netcat git unzip
 sudo apt-get -y install htop
 sudo apt-get -y install iperf
 
-printf "Now some more application specific stuff ..."
+printf "Now some more application specific stuff ...\n"
 
 pushd provision
-
-. java-repo.sh
 
 . os_config.sh
 
