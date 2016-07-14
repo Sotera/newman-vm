@@ -10,6 +10,8 @@ sudo -u vagrant -H sh -c "sudo mv newman-vm/ /home/vagrant"
 sudo chown -R vagrant.vagrant /home/vagrant/newman-vm
 
 #Try doing this java-repo thing here ...
+pushd provision
 . java-repo.sh
+popd
 
 printf "Now, logout and log back in as 'vagrant' then cd /home/vagrant/newman-vm && ./_run_me_second.sh\n"

@@ -24,8 +24,8 @@ else
     popd
 fi
 
-sudo dpkg -i /tmp/cloudera-manager-daemons_5.4.7-1.cm547.p0.10~trusty-cm5_all.deb
 sudo dpkg -i /tmp/cloudera-manager-agent_5.4.7-1.cm547.p0.10~trusty-cm5_amd64.deb
+sudo dpkg -i /tmp/cloudera-manager-daemons_5.4.7-1.cm547.p0.10~trusty-cm5_all.deb
 
 sudo apt-get install -f -y
 
