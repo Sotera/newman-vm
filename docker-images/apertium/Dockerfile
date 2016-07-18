@@ -9,13 +9,14 @@ EXPOSE 4040
 #See the full list at  http://wiki.apertium.org/wiki/List_of_language_pairs
 #
 
-RUN /bin/bash -c "cd /scripts/ \
-  && wget http://apertium.projectjj.com/apt/install-nightly.sh \
-  && chmod +x /scripts/install-nightly.sh \
-  && /scripts/install-nightly.sh \
-  && apt-get update \
-  && apt-get -f -y install apertium-en-es \
-  && pip install langdetect"
+WORKDIR /scripts/
+RUN wget http://apertium.projectjj.com/apt/install-nightly.sh
+RUN chmod +x /scripts/install-nightly.sh
+RUN /scripts/install-nightly.sh
+#RUN apt-get --force-yes -y install apt-transport-https
+#RUN apt-get --force-yes -y update
+RUN apt-get --force-yes -y install apertium-en-es
+RUN pip install langdetect
 
 WORKDIR /srv/software/pst-extraction/
 

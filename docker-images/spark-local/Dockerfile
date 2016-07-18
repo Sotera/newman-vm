@@ -7,7 +7,7 @@ ENV SPARK_HOME /usr/lib/spark
 
 EXPOSE 4040
 
-ADD ["java.sh","java-repo.sh","spark.sh","spark-env.sh","spark-profile.sh","/scripts/"]
+ADD ["java-repo.sh","java.sh","spark.sh","spark-env.sh","spark-profile.sh","/scripts/"]
 
 
 RUN /bin/bash -c "apt-get update \
@@ -21,9 +21,9 @@ RUN /bin/bash -c "apt-get install -y software-properties-common \
   && add-apt-repository -y ppa:igraph/ppa"
 
 
-RUN /bin/bash -c "/scripts/java-repo.sh \
-  && /scripts/java.sh \
-  && /scripts/spark.sh"
+RUN /bin/bash -c "/scripts/java-repo.sh"
+RUN /bin/bash -c "/scripts/java.sh"
+RUN /bin/bash -c "/scripts/spark.sh"
 
 WORKDIR /srv/software/pst-extraction/
 
