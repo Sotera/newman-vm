@@ -18,7 +18,7 @@ sudo dpkg -i elasticsearch-2.0.0.deb
 
 sudo mkdir -p /var/backups/elasticsearch
 sudo mkdir /etc/elasticsearch/scripts
-sudo echo "doc['sent_count'].value + doc['received_count'].value" >  /etc/elasticsearch/scripts/email_addr-sent-rcvd-sum.groovy
+sudo /bin/bash -c "echo \"doc['sent_count'].value + doc['received_count'].value\" >  /etc/elasticsearch/scripts/email_addr-sent-rcvd-sum.groovy"
 
 sudo update-rc.d elasticsearch defaults 95 10
 sudo /etc/init.d/elasticsearch start
