@@ -23,12 +23,12 @@ fi
 if [ -a ../artifacts/MITIE-models-v0.2-Spanish.zip ]; then
     cp ../artifacts/MITIE-models-v0.2-Spanish.zip /srv/software/MITIE/
     pushd /srv/software/MITIE/
-    unzip MITIE-models-v0.2-Spanish.zip
+    sudo unzip MITIE-models-v0.2-Spanish.zip
     popd
 else
     pushd /srv/software/MITIE/
     sudo wget https://sourceforge.net/projects/mitie/files/binaries/MITIE-models-v0.2-Spanish.zip    
-    unzip MITIE-models-v0.2-Spanish.zip
+    sudo unzip MITIE-models-v0.2-Spanish.zip
     popd
 fi 
 
