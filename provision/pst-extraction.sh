@@ -41,7 +41,8 @@ sudo pip install reverend
 #install the pst-extraction project
 pushd /srv/software/
 
-sudo wget -O - -o /dev/null https://github.com/Sotera/pst-extraction/archive/master.tar.gz | tar -zxvf -
+sudo wget -O - -o /dev/null https://github.com/Sotera/pst-extraction/archive/on-the-metal.tar.gz | tar -zxvf -
+sudo mv pst-extraction-on-the-metal pst-extraction-master
 
 popd
 
