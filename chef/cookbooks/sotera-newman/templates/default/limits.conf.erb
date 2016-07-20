@@ -1,0 +1,15 @@
+# /etc/security/limits.conf
+#
+
+#*               soft    core            0
+#root            hard    core            100000
+#*               hard    rss             10000
+#@student        hard    nproc           20
+#@faculty        soft    nproc           20
+#@faculty        hard    nproc           50
+#ftp             hard    nproc           0
+#ftp             -       chroot          /ftp
+#@student        -       maxlogins       4
+<%= #{node['sotera-newman']['limits']['user']} %> hard nofile <%= #{node['sotera-newman']['limits']['hard_limit']} %>
+<%= #{node['sotera-newman']['limits']['user']} %> soft nofile <%= #{node['sotera-newman']['limits']['soft_limit']} %>
+

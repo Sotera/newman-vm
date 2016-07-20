@@ -1,26 +1,49 @@
 # -*- mode: ruby -*-
-# vi: set ft=ruby :
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
+private_network_ip = '172.20.0.110'
+username = %w{USER USERNAME}.map{|x|u=(ENV[x]||'').gsub(/[^\w]/,''); u unless u.empty?}.compact.first
+if username.nil?
+  puts 'ERROR: Could not determine username from environment'
+  exit 1
+end
 
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "ubuntu/trusty64"
+VAGRANT_API_VERSION = '2'
+Vagrant.configure(VAGRANT_API_VERSION) do |config|
 
-  config.vm.provision :shell, path: "bootstrap.sh"
-
-  config.vm.provider :virtualbox do |vb|
-    vb.gui = false
-    vb.memory = 8192 
-    vb.cpus = 1
-    vb.customize ["modifyvm", :id, "--vram", "32"]
+  config.vm.provider 'virtualbox' do |vb|
+    vb.customize ['modifyvm', :id, '--memory', '8192']
+    vb.customize ['modifyvm', :id, '--cpus', '2']
   end
 
-  config.vm.network :forwarded_port, guest: 8787, host: 8787, auto_correct: true
-  config.vm.network :forwarded_port, guest: 9200, host: 9200, auto_correct: true
-  config.vm.network :forwarded_port, guest: 5601, host: 5601, auto_correct: true
-  config.vm.network :forwarded_port, guest: 4040, host: 4040, auto_correct: true
+  config.vm.hostname = "newman-#{username}"
+  config.vm.network :private_network, ip: private_network_ip
+  config.vm.box = 'opscode_ubuntu-14.04_chef-provisionerless.box'
+  config.vm.box_url = 'http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box'
 
+  #config.vm.synced_folder ""
+  
+  config.vm.provision :shell, :inline => $preSetupScript
 
+  config.vm.provision 'chef_solo' do |chef|
+    chef.cookbooks_path = [ "./chef/cookbooks", "~/projects/sotera/chef-sotera/cookbooks" ]
+    chef.roles_path = [ "./chef/roles", "~/projects/sotera/chef-sotera/roles" ]
+    chef.data_bags_path = "~/projects/sotera/chef-sotera/data_bags"
+    chef.environments_path = [ "~/projects/sotera/chef-sotera/environments" ]
+
+    Dir["#{Pathname(__FILE__).dirname.join('roles')}/*.json"].each do |role|
+      chef.add_role(role)
+    end
+  
+    chef.json = {
+      "vagrant" => "true"
+    }
+    
+    chef.add_role "base_vagrant"
+    chef.add_role "java_8"
+    chef.add_recipe "sotera-newman::everything"
+    #chef.add_role ""
+
+    
+  end
 end
