@@ -55,4 +55,12 @@ cd /srv/software
 printf "fix permissions \n"
 sudo chown vagrant:vagrant /srv/software -R 
 
+docker pull sotera/spark-local:0.9
+docker tag sotera/spark-local:0.9 spark-local:latest
+docker pull sotera/geo-utils:0.9
+docker tag sotera/geo-utils:0.9 geo-utils:latest
+docker pull sotera/apertium:0.9
+docker tag sotera/apertium:0.9 apertium:latest
+docker pull sotera/ocr:0.9
+docker tag sotera/ocr:0.9 ocr:latest
 
