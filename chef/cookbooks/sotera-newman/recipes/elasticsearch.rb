@@ -34,6 +34,7 @@ execute "mkdir -p /var/backups/elasticsearch"
 
 template "/etc/elasticsearch/scripts/email_addr-sent-rcvd-sum.groovy" do
   source "email_addr-sent-rcvd-sum.groovy.erb"
+  action :create
   notifies :restart, 'service[elasticsearch]'
 end
 

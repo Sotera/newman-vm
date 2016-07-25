@@ -1,12 +1,10 @@
-
-# install igraph repo
 case node['platform_family']
   when 'debian'
-    apt_repository 'igraph' do
-      uri           'http://ppa.launchpad.net/igraph/ppa/ubuntu'
+    apt_repository 'digitalsynapse' do
+      uri           'http://repo.digitalsynapse.io/apt'
       distribution  node['lsb']['codename']
       components    ['main']
-      key           'http://ppa.launchpad.net/igraph/ppa/ubuntu/dists/trusty/Release.gpg'
+      key           'http://repo.digitalsynapse.io/apt/pubkey.gpg'
       action        :add
     end
   when 'rhel'

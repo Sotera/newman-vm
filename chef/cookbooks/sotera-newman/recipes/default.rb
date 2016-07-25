@@ -14,3 +14,6 @@ template "/etc/security/limits.conf" do
   group 'root'
 end
 
+
+execute "mkdir -p /srv/software/"
+execute "chmod -R 755 /srv/software"

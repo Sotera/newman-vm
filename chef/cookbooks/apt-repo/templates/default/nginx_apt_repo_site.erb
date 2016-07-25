@@ -1,0 +1,15 @@
+server {
+
+  ## Let your repository be the root directory
+  root        <%= node['apt_repo']['freight']['nginx']['www_root'] %>/public;
+
+  ## Always good to log
+  access_log  /var/log/nginx/repo.access.log;
+  error_log   /var/log/nginx/repo.error.log;
+
+  ## Prevent access to Reprepro's files
+  location ~ /(db|conf) {
+    deny        all;
+    return      404;
+  }
+}
