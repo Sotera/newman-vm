@@ -3,7 +3,7 @@
 
 printf "Install \e[0;36mTangelo\e[0m \n"
 
-sudo pip install -Iv tangelo==0.6.1
+sudo pip install -Iv tangelo==0.7
 
 printf "Configure \e[0;36mTangelo\e[0m \n"
 
