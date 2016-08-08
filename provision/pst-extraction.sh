@@ -13,7 +13,7 @@ sudo pip install -U olefile
 #install image clustering deps
 sudo apt-get install -f -y python-numpy python-scipy python-matplotlib python-pandas python-sympy python-nose
 
-sudo pip install scikit-image
+sudo pip install cython scikit-image
 sudo pip install -U scikit-learn
 sudo pip install Pillow
 
