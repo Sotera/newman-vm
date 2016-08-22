@@ -3,7 +3,7 @@
 
 printf "Setup \e[0;36mLinux\e[0m \n"
 
-. /vagrant/provision/java-repo.sh
+. /vagrant/provision/java.sh
 
 # igraph repo
 add-apt-repository -y ppa:igraph/ppa 
@@ -24,8 +24,6 @@ chmod 755 /srv/software
 . /vagrant/provision/os_config.sh
 
 . /vagrant/provision/mysql.sh
-
-. /vagrant/provision/java.sh
 
 . /vagrant/provision/scala.sh
 
