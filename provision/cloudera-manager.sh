@@ -27,5 +27,5 @@ sudo apt-get install -f -y
 
 sudo update-rc.d cloudera-scm-agent disable
 
-sudo servive cloudera-scm-agent stop
+sudo service cloudera-scm-agent stop
 echo manual | sudo tee /etc/init/cloudera-scm-agent.override
