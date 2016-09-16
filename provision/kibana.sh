@@ -2,10 +2,9 @@
 
 printf "Installing \e[0;36mKibana\e[0m \n"
 
-sudo mkdir /kibana
-sudo chown vagrant:vagrant /kibana
-cd /kibana
-sudo wget -q https://download.elastic.co/kibana/kibana/kibana-4.2.2-linux-x64.tar.gz
-tar xf kibana-4.2.2-linux-x64.tar.gz
+sudo wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo echo "deb https://packages.elastic.co/kibana/4.6/debian stable main" | sudo tee -a /etc/apt/sources.list.d/kibana.list
+sudo apt-get update && sudo apt-get install kibana
 
-sudo chown -R vagrant:vagrant /kibana
+#Configure kibana to automatically start during bootup
+sudo update-rc.d kibana defaults 95 10

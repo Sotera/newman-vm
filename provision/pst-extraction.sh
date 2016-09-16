@@ -41,7 +41,10 @@ sudo pip install reverend
 #install the pst-extraction project
 cd /srv/software
 
-sudo wget -O - -o /dev/null https://github.com/Sotera/pst-extraction/archive/master.tar.gz | tar -zxvf -
+#sudo wget -O - -o /dev/null https://github.com/Sotera/pst-extraction/archive/master.tar.gz | tar -zxvf -
+sudo git clone https://github.com/Sotera/pst-extraction.git pst-extraction-master
+cd /srv/software/pst-extraction-master/
+sudo git checkout newman-etl-v3.x
 
 # Install for local mode execution --  MITIE deps must be provided to spark on path
 cd /srv/software/pst-extraction-master/

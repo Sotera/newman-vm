@@ -23,7 +23,7 @@ chmod 755 /srv/software
 
 . /vagrant/provision/os_config.sh
 
-. /vagrant/provision/mysql.sh
+#. /vagrant/provision/mysql.sh
 
 . /vagrant/provision/java.sh
 
@@ -35,7 +35,7 @@ chmod 755 /srv/software
 
 . /vagrant/provision/kibana.sh
 
-. /vagrant/provision/tangelo.sh
+#. /vagrant/provision/tangelo.sh
 
 . /vagrant/provision/mitie.sh
 
@@ -47,9 +47,7 @@ chmod 755 /srv/software
 
 . /vagrant/provision/docker.sh
 
-. /vagrant/provision/embed-map.sh
-
-. /vagrant/provision/cloudera-manager.sh
+#. /vagrant/provision/cloudera-manager.sh
 
 cd /srv/software 
 printf "fix permissions \n"

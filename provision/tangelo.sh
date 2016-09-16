@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#DEPRECATED - use flask
 
 printf "Install \e[0;36mTangelo\e[0m \n"
 
