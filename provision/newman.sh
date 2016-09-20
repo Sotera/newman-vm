@@ -12,11 +12,10 @@ cd /srv/software
 
 git clone https://github.com/Sotera/newman.git newman3
 cd /srv/software/newman3/
-git checkout newman-x3.x
+git checkout newman-v3.x
 
 cd /srv/software/
 ln -s newman3 newman
-
 
 #Install Virtualenv for use with flask
 sudo apt-get -y install python-virtualenv
