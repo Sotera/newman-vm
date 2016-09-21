@@ -10,6 +10,9 @@ sudo pip install https://github.com/mattgwwalker/msg-extractor/zipball/master
 #install ole reader for .msg files
 sudo pip install -U olefile
 
+#install for xml ingest
+sudo pip install xmltodict
+
 #install image clustering deps
 sudo apt-get install -f -y python-numpy python-scipy python-matplotlib python-pandas python-sympy python-nose
 

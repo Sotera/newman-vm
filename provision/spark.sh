@@ -8,7 +8,7 @@ sudo cp /vagrant/artifacts/spark-profile.sh /etc/profile.d/spark.sh
 if [[ -a /vagrant/artifacts/spark-1.5.0-bin-hadoop2.3.tgz ]]; then
     cp /vagrant/artifacts/spark-1.5.0-bin-hadoop2.3.tgz /tmp/
 else
-    wget -q http://www.interior-dsgn.com/apache/spark/spark-1.5.0/spark-1.5.0-bin-hadoop2.3.tgz
+    wget -q http://archive.apache.org/dist/spark/spark-1.5.0/spark-1.5.0-bin-hadoop2.3.tgz
 fi
 
 tar -zxvf spark-1.5.0-bin-hadoop2.3.tgz
