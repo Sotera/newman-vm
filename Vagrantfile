@@ -26,7 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 5984, host: 5984, auto_correct: true
   config.vm.network :forwarded_port, guest: 5000, host: 5000, auto_correct: true
 
-  config.vm.synced_folder "/Users/jlee/work/repository/newman-dev-v2.x/newman-app-v2.x", "/vagrant/newman-app-v2.x"
-  config.vm.synced_folder "/Users/jlee/work/repository/newman-dev-v2.x/newman-etl-v2.x", "/vagrant/newman-etl-v2.x"
+  #config.vm.synced_folder "/Users/jlee/work/repository/newman-dev-v2.x/newman-app-v2.x", "/vagrant/newman-app-v2.x"
+  #config.vm.synced_folder "/Users/jlee/work/repository/newman-dev-v2.x/newman-etl-v2.x", "/vagrant/newman-etl-v2.x"
 
 end
