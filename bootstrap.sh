@@ -17,6 +17,8 @@ apt-get -y install pkg-config python-pip python-dev
 apt-get -y install netcat git unzip
 apt-get -y install htop
 apt-get -y install iperf
+apt-get -y install git
+apt-get -y install git-gui
 
 mkdir -p /srv/software 
 chmod 755 /srv/software 
