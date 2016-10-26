@@ -31,7 +31,7 @@ chmod 755 /srv/software
 
 . /vagrant/provision/scala.sh
 
-. /vagrant/provision/spark.sh
+. /vagrant/provision/spark-2.0.1.sh
 
 . /vagrant/provision/elasticsearch.sh
 
