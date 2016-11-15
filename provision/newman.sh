@@ -23,3 +23,6 @@ sudo apt-get -y install python-virtualenv
 #Init the flask environment
 cd newman3
 ./install-venv.sh
+
+ln -s /srv/software/pst-extraction-master/ /srv/software/newman-etl
+
