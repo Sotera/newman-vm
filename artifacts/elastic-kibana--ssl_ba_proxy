@@ -10,6 +10,7 @@
 #  Kibana HTTPS Port 5443
 #
 #  Add passwords to /etc/nginx/.elastic.htpasswd
+#  Add passwords to /etc/nginx/.kibana.htpasswd
 #
 #
 #  NOTE:  The typical method of protecting your Elasticsearch cluster to is to 
@@ -25,6 +26,7 @@ upstream elasticsearch {
   server 127.0.0.1:9200;
   keepalive 15;
 }
+
 upstream kibana {
   server 127.0.0.1:5601;
   keepalive 15;
@@ -33,7 +35,7 @@ upstream kibana {
 server {
   listen 9443;
 
-  auth_basic "Protected Elasticsearch";
+  auth_basic "Content Requires Authorization";
   auth_basic_user_file /etc/nginx/.elastic.htpasswd;
 
 
@@ -61,7 +63,7 @@ server {
 server {
   listen 5443;
 
-  auth_basic "Protected Elasticsearch";
+  auth_basic "Content Requires Authorization";
   auth_basic_user_file /etc/nginx/.kibana.htpasswd;
 
 
