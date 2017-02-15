@@ -13,11 +13,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :virtualbox do |vb|
     vb.name = "newman-vm-v3.x"
     vb.gui = false
-    vb.memory = 8192
+    vb.memory = 12240
     vb.cpus = 2
     vb.customize ["modifyvm", :id, "--vram", "32"]
   end
 
+  config.vm.network :forwarded_port, guest: 80, host: 80, auto_correct: true
+  config.vm.network :forwarded_port, guest: 443, host: 443, auto_correct: true
   config.vm.network :forwarded_port, guest: 8787, host: 8787, auto_correct: true
   config.vm.network :forwarded_port, guest: 9200, host: 9200, auto_correct: true
   config.vm.network :forwarded_port, guest: 4040, host: 4040, auto_correct: true

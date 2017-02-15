@@ -1,0 +1,90 @@
+###############################################################################
+#
+#  Elasticsearch https proxy configuration
+#  Provided as an example only!  
+
+#  Make sure your environment binds specific ips, dont open ES ports to web 
+#      -dont bind 9200 etc externally, etc... 
+#
+#  ES HTTPS Port 9443
+#  Kibana HTTPS Port 5443
+#
+#  Add passwords to /etc/nginx/.elastic.htpasswd
+#  Add passwords to /etc/nginx/.kibana.htpasswd
+#
+#
+#  NOTE:  The typical method of protecting your Elasticsearch cluster to is to 
+#         restrict the access via VPN, firewall rules, AWS’s security groups, 
+#         etc. This configuration provides a way to connect to the cluster 
+#         from the outside, using basic auth /  username and password.
+###############################################################################
+
+
+
+
+upstream elasticsearch {
+  server 127.0.0.1:9200;
+  keepalive 15;
+}
+
+upstream kibana {
+  server 127.0.0.1:5601;
+  keepalive 15;
+}
+
+server {
+  listen 9443;
+
+  auth_basic "Content Requires Authorization";
+  auth_basic_user_file /etc/nginx/.elastic.htpasswd;
+
+
+  ssl_certificate           /etc/nginx/cert.crt;
+  ssl_certificate_key       /etc/nginx/cert.key;
+
+  ssl on;
+  ssl_session_cache  builtin:1000  shared:SSL:10m;
+  ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+  ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+  ssl_prefer_server_ciphers on;
+
+  access_log            /var/log/nginx/es.443.access.log;
+
+
+  location / {
+    proxy_pass http://elasticsearch;
+    proxy_redirect off;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "Keep-Alive";
+    proxy_set_header Proxy-Connection "Keep-Alive";  
+  }
+}
+
+server {
+  listen 5443;
+
+  auth_basic "Content Requires Authorization";
+  auth_basic_user_file /etc/nginx/.kibana.htpasswd;
+
+
+  ssl_certificate           /etc/nginx/cert.crt;
+  ssl_certificate_key       /etc/nginx/cert.key;
+
+  ssl on;
+  ssl_session_cache  builtin:1000  shared:SSL:10m;
+  ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+  ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+  ssl_prefer_server_ciphers on;
+
+  access_log            /var/log/nginx/kibana.443.access.log;
+
+
+  location / {
+    proxy_pass http://kibana;
+    proxy_redirect off;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "Keep-Alive";
+    proxy_set_header Proxy-Connection "Keep-Alive";  
+  }
+}
+

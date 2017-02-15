@@ -6,8 +6,10 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "newman-vm"
+  config.vm.box = "newman-vm-v3.x"
 
+  config.vm.network :forwarded_port, guest: 80, host: 80, auto_correct: true
+  config.vm.network :forwarded_port, guest: 443, host: 443, auto_correct: true
   config.vm.network :forwarded_port, guest: 8787, host: 8787, auto_correct: true
   config.vm.network :forwarded_port, guest: 9200, host: 9200, auto_correct: true
   config.vm.network :forwarded_port, guest: 4040, host: 4040, auto_correct: true
