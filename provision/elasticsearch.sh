@@ -23,7 +23,7 @@ printf "Installing Python \e[0;36mElastic Search Package\e[0m \n"
 sudo pip install elasticsearch==2.4.0
 
 printf "Installing carrot2 \e[0;36mElastic Search Plugin\e[0m \n"
-sudo /usr/share/elasticsearch/bin/plugin install org.carrot2/elasticsearch-carrot2/2.4.0
+sudo /usr/share/elasticsearch/bin/plugin install -b org.carrot2/elasticsearch-carrot2/2.4.0
 
 printf "Installing Head  \e[0;36mElastic Search Plugin\e[0m \n"
 sudo /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head
