@@ -17,8 +17,8 @@ apt-get -y install pkg-config python-pip python-dev
 apt-get -y install netcat git unzip
 apt-get -y install htop
 apt-get -y install iperf
-apt-get -y install git
-apt-get -y install git-gui
+#apt-get -y install git
+#apt-get -y install git-gui
 
 mkdir -p /srv/software 
 chmod 755 /srv/software 
@@ -27,7 +27,9 @@ chmod 755 /srv/software
 
 #. /vagrant/provision/mysql.sh
 
-. /vagrant/provision/java.sh
+#. /vagrant/provision/java.sh
+
+. /vagrant/provision/maven.sh
 
 . /vagrant/provision/scala.sh
 
@@ -47,7 +49,7 @@ chmod 755 /srv/software
 
 . /vagrant/provision/pst-extraction.sh
 
-. /vagrant/provision/docker.sh
+#. /vagrant/provision/docker.sh
 
 #. /vagrant/provision/cloudera-manager.sh
 
