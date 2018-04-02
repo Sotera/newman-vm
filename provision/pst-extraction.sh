@@ -35,6 +35,11 @@ sudo pip install dill
 
 #install reverend bayesian classifier, used for spam filtering
 sudo pip install reverend
+
+sudo pip install spacy
+sudo python -m spacy download en
+sudo python -m spacy download es
+
 #TODO pip probably works but should be tested
 #cd /tmp
 #sudo wget https://github.com/skorokithakis/Reverend/archive/master.zip
