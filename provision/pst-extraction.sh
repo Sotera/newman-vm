@@ -2,6 +2,14 @@
 
 printf "Installing \e[0;36mpst-extraction\e[0m \n"
 
+#install setuptools
+sudo pip install setuptools
+
+#install spacy
+sudo pip install spacy
+sudo python -m spacy download en
+sudo python -m spacy download es
+
 #install pst reader
 sudo apt-get -y install readpst
 sudo pip install https://github.com/mattgwwalker/msg-extractor/zipball/master
@@ -35,10 +43,6 @@ sudo pip install dill
 
 #install reverend bayesian classifier, used for spam filtering
 sudo pip install reverend
-
-sudo pip install spacy
-sudo python -m spacy download en
-sudo python -m spacy download es
 
 #TODO pip probably works but should be tested
 #cd /tmp
